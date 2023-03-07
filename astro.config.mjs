@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-07 14:45:25
+ * @LastEditTime: 2023-03-07 14:47:06
  * @FilePath: \w3way\astro.config.mjs
  * @Description: 文件描述
  */
@@ -19,5 +19,5 @@ export default defineConfig({
   ],
   site: 'https://ideshun.github.io',
   base: '/w3way',
-  outDir: '/w3way'
+  base: '/w3way'
 });
