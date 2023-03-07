@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-07 14:18:16
+ * @LastEditTime: 2023-03-07 14:34:45
  * @FilePath: \w3way\astro.config.mjs
  * @Description: 文件描述
  */
@@ -17,5 +17,6 @@ export default defineConfig({
     // Enable React for the Algolia search component.
     react(),
   ],
-  site: 'https://w3way.top',
+  site: 'https://ideshun.github.io',
+  base: '/w3way'
 });
