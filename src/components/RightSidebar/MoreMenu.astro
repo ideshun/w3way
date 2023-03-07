@@ -1,0 +1,32 @@
+---
+import ThemeToggleButton from "./ThemeToggleButton";
+import { LINKS } from "../../consts";
+
+const showMoreSection = Boolean(LINKS);
+---
+
+{showMoreSection && <h2 class="heading">更多</h2>}
+<ul>
+  {
+    LINKS?.length &&
+      LINKS.map((item) => (
+        <li class={`header-link depth-2`}>
+          <a href={item.url} target="_blank">
+            <span>{item.name}</span>
+          </a>
+        </li>
+      ))
+  }
+</ul>
+<div style="margin: 2rem 0; text-align: center;">
+  <ThemeToggleButton client:visible />
+</div>
+
+<style>
+  .edit-on-github {
+    text-decoration: none;
+    font: inherit;
+    color: inherit;
+    font-size: 1rem;
+  }
+</style>
