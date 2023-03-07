@@ -16,7 +16,6 @@ pnpm-debug.log*
 
 # lock files
 package-lock.json
-yarn.lock
 
 
 # environment variables
