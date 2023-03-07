@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-07 10:12:32
+ * @LastEditTime: 2023-03-07 10:42:49
  * @FilePath: \w3way\astro.config.mjs
  * @Description: 文件描述
  */
