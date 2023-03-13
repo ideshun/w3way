@@ -18,5 +18,4 @@ export default defineConfig({
     react(),
   ],
   site: 'https://ideshun.github.io',
-  base: '/',
 });
