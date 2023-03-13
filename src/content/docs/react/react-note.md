@@ -7,7 +7,7 @@ description: "React 学习笔记"
 
 函数式组件就是函数，可以 `写逻辑` 和 `定义变量` 等函数可以操作的所有操作；
 
-```react
+```tsx
 import React from 'react';
 
 const IndexPage: React.FC<{}> = () => {
@@ -39,7 +39,7 @@ export default IndexPage;
 
 #### 也可以在（父）组件传参时使用函数组件：
 
-```react
+```tsx
 //页面
 import BillTab from '@/components/bill-tab'
 ...
@@ -72,7 +72,7 @@ export default BillTab;
 2. 必须要写 `render()` 
 3. `render()` 必须有返回值
 
-```React
+```tsx
 //创建类式组件
 class MyComponent extends React.Component {
   constructor(props) {
@@ -99,7 +99,7 @@ class MyComponent extends React.Component {
 
 #### 增加事件和函数
 
-```React
+```tsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props)
@@ -127,7 +127,7 @@ function handelClick() {
 
 比如我封装了一个组件 `BillTab` ，想在它里面写一些自定义的内容。
 
-```React
+```tsx
 ...
 <billTab title='标题'>
   <h2>Hello Word</h2>
@@ -139,7 +139,7 @@ function handelClick() {
 
 `props` 有一个 `children` 属性，就是标签里面的内容：
 
-```React
+```tsx
 interface Props {
   title: ReactNode; //标题
 }
