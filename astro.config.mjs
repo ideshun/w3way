@@ -19,5 +19,4 @@ export default defineConfig({
   ],
   site: 'https://ideshun.github.io',
   base: '/',
-  root: '/'
 });
