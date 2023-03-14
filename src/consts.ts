@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-13 12:08:48
+ * @LastEditTime: 2023-03-14 21:28:40
  * @FilePath: \w3way\src\consts.ts
  * @Description: 常量
  */
@@ -50,7 +50,10 @@ export type Sidebar = Record<
 >;
 export const SIDEBAR: Sidebar = {
   en: {
-    '常用': [{ text: "TypeScript笔记", link: "common/typescript" }],
+    '常用': [
+      { text: "TypeScript笔记", link: "common/typescript" },
+      { text: "NodeJS笔记", link: "common/node" }
+    ],
     React: [{ text: "学习笔记", link: "react/react-note" }],
     Rust: [{ text: "介绍", link: "rust/introduction" }],
   },
