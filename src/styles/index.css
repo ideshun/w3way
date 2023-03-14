@@ -52,7 +52,7 @@ h5,
 h6 {
 	margin-bottom: 1rem;
 	font-weight: bold;
-	line-height: 1;
+	line-height: 1.2;
 }
 
 h1,
@@ -69,20 +69,20 @@ h2 {
 }
 
 h1 {
-	font-size: 3.25rem;
-	font-weight: 800;
+	font-size: 2.18rem;
+	font-weight: 600;
 }
 
 h2 {
-	font-size: 2.5rem;
+	font-size: 1.68rem;
 }
 
 h3 {
-	font-size: 1.75rem;
+	font-size: 1.38rem;
 }
 
 h4 {
-	font-size: 1.3rem;
+	font-size: 1.18rem;
 }
 
 h5 {
@@ -90,11 +90,11 @@ h5 {
 }
 
 p {
-	line-height: 1.65em;
+	line-height: 1.68em;
 }
 
 .content ul {
-	line-height: 1.1em;
+	line-height: 1.2em;
 }
 
 p,
@@ -137,7 +137,7 @@ article > section nav :is(ul, ol) {
 
 article > section nav {
 	margin-top: 1rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1.88rem;
 }
 
 article > section ::marker {
@@ -213,19 +213,20 @@ pre > code {
 
 table,
 pre {
+	box-sizing: border-box;
 	position: relative;
 	--padding-block: 1rem;
-	--padding-inline: 2rem;
+	--padding-inline: 1.68rem;
 	padding: var(--padding-block) var(--padding-inline);
 	padding-right: calc(var(--padding-inline) * 2);
-	margin-left: calc(var(--padding-inline) * -1);
-	margin-right: calc(var(--padding-inline) * -1);
+	/* margin-left: calc(var(--padding-inline) * -1); */
+	/* margin-right: calc(var(--padding-inline) * -1); */
 	font-family: var(--font-mono);
-
 	line-height: 1.5;
 	font-size: 0.85em;
 	overflow-y: hidden;
 	overflow-x: auto;
+    border-radius: 8px;
 }
 
 table {

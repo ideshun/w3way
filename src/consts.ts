@@ -8,7 +8,7 @@
  */
 export const SITE = {
   title: "w3Way",
-  description: "前端学习路径",
+  description: "前端笔记",
   defaultLanguage: "en-us",
 } as const;
 

@@ -24,5 +24,10 @@
   },
   "devDependencies": {
     "html-escaper": "^3.0.3"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 version",
+    "not dead"
+  ]
 }
