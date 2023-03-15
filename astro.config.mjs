@@ -17,5 +17,5 @@ export default defineConfig({
     // Enable React for the Algolia search component.
     react(),
   ],
-  site: 'https://ideshun.github.io',
+  site: 'https://w3way.top',
 });
