@@ -24,3 +24,22 @@ const imageAlt = image?.alt;
 <meta property="og:site_name" content={SITE.title} />
 <meta name="description" property="og:description" content={SITE.description} />
 <meta name="keywords" content={SITE.keywords} />
+
+<!-- Baidu Analytics -->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?2963fb86e66c51e859ddf6ce1b67afbe";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BEL6FCWKFW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BEL6FCWKFW');
+</script>
