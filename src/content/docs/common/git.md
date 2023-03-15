@@ -1,6 +1,6 @@
 ---
-title: "Git 笔记"
-description: "Git 笔记"
+title: "SEO 笔记"
+description: "SEO 笔记"
 ---
 
 #### 撤销提交
