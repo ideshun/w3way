@@ -61,24 +61,24 @@ h2 {
 }
 
 :is(h2, h3):not(:first-child) {
-	margin-top: 3rem;
+	margin-top: 2.18rem;
 }
 
 :is(h4, h5, h6):not(:first-child) {
-	margin-top: 2rem;
+	margin-top: 1.68rem;
 }
 
 h1 {
-	font-size: 2.18rem;
+	font-size: 1.88rem;
 	font-weight: 600;
 }
 
 h2 {
-	font-size: 1.68rem;
+	font-size: 1.58rem;
 }
 
 h3 {
-	font-size: 1.38rem;
+	font-size: 1.28rem;
 }
 
 h4 {
@@ -306,16 +306,16 @@ button {
 
 h2.heading {
 	font-size: 1rem;
-	font-weight: 700;
+	font-weight: normal;
 	padding: 0.1rem 1rem;
 	text-transform: uppercase;
 	margin-bottom: 0.5rem;
 }
 
 .header-link {
-	font-size: 1em;
+	font-size: 0.95rem;
 	transition: border-inline-start-color 100ms ease-out, background-color 200ms ease-out;
-	border-left: 4px solid var(--theme-divider);
+	border-left: 2px solid var(--theme-divider);
 }
 
 .header-link a {
@@ -356,13 +356,13 @@ h2.heading {
 
 /* Add line and padding on the left side */
 .header-link {
-	padding-inline-start: 1rem;
+	padding-inline-start: 0.88rem;
 }
 .header-link.depth-3 {
-	padding-inline-start: 2rem;
+	padding-inline-start: 1.58rem;
 }
 .header-link.depth-4 {
-	padding-inline-start: 3rem;
+	padding-inline-start: 1.88rem;
 }
 
 /* Screenreader Only Text */

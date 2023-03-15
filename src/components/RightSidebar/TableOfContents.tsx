@@ -1,3 +1,11 @@
+/*
+ * @Author: Deshun
+ * @Date: 2023-03-15 08:48:09
+ * @LastEditors: Deshun
+ * @LastEditTime: 2023-03-15 19:58:51
+ * @FilePath: \w3way\src\components\RightSidebar\TableOfContents.tsx
+ * @Description: 文件描述
+ */
 import type { MarkdownHeading } from 'astro';
 import type { FunctionalComponent } from 'preact';
 import { unescape } from 'html-escaper';
@@ -69,7 +77,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 	return (
 		<>
 			<h2 id={onThisPageID} className="heading">
-				页面路径
+				文章目录
 			</h2>
 			<ul ref={toc}>
 				{headings
