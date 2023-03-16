@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-15 08:48:09
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-15 19:58:51
+ * @LastEditTime: 2023-03-16 15:07:21
  * @FilePath: \w3way\src\components\RightSidebar\TableOfContents.tsx
  * @Description: 文件描述
  */
@@ -64,7 +64,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 		const headingsObserver = new IntersectionObserver(setCurrent, observerOptions);
 
 		// Observe all the headings in the main page content.
-		document.querySelectorAll('article :is(h1,h2,h3)').forEach((h) => headingsObserver.observe(h));
+		document.querySelectorAll('article :is(h1,h2,h3,h4)').forEach((h) => headingsObserver.observe(h));
 
 		// Stop observing when the component is unmounted.
 		return () => headingsObserver.disconnect();
@@ -81,7 +81,7 @@ const TableOfContents: FunctionalComponent<{ headings: MarkdownHeading[] }> = ({
 			</h2>
 			<ul ref={toc}>
 				{headings
-					.filter(({ depth }) => depth > 1 && depth < 4)
+					.filter(({ depth }) => depth > 1 && depth < 5)
 					.map((heading) => (
 						<li
 							className={`header-link depth-${heading.depth} ${
