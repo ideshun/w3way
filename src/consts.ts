@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-15 22:07:08
+ * @LastEditTime: 2023-03-16 17:53:06
  * @FilePath: \w3way\src\consts.ts
  * @Description: 常量
  */
@@ -56,9 +56,10 @@ export const SIDEBAR: Sidebar = {
   en: {
     '常用': [
       { text: "Git", link: "common/git" },
-      { text: "TypeScript", link: "common/typescript" },
+      { text: "Node", link: "common/node" },
       { text: "SEO", link: "common/seo" },
-      { text: "NodeJS", link: "common/node" }
+      { text: "TypeScript", link: "common/typescript" },
+      { text: "Yarn", link: "common/yarn" }
     ],
     React: [{ text: "学习笔记", link: "react/react-note" }],
     Rust: [{ text: "介绍", link: "rust/introduction" }],
