@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-16 17:53:06
+ * @LastEditTime: 2023-03-17 11:16:51
  * @FilePath: \w3way\src\consts.ts
  * @Description: 常量
  */
@@ -15,16 +15,6 @@ export const SITE = {
 } as const;
 
 export const SITE_TITLE = `${SITE.title} - ${SITE.name}`
-
-export const OPEN_GRAPH = {
-  image: {
-    src: "https://github.com/withastro/astro/blob/main/assets/social/banner-minimal.png?raw=true",
-    alt:
-      "astro logo on a starry expanse of space," +
-      " with a purple saturn-like planet floating in the right foreground",
-  },
-  twitter: "astrodotbuild",
-};
 
 export const KNOWN_LANGUAGES = {
   English: "en",
@@ -41,12 +31,6 @@ export const LINKS = [
     url: "https://www.dblog.cc",
   },
 ];
-// See "Algolia" section of the README for more information.
-export const ALGOLIA = {
-  indexName: "XXXXXXXXXX",
-  appId: "XXXXXXXXXX",
-  apiKey: "XXXXXXXXXX",
-};
 
 export type Sidebar = Record<
   (typeof KNOWN_LANGUAGE_CODES)[number],
@@ -59,6 +43,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Node", link: "common/node" },
       { text: "SEO", link: "common/seo" },
       { text: "TypeScript", link: "common/typescript" },
+      { text: "VS Code", link: "common/vscode" },
       { text: "Yarn", link: "common/yarn" }
     ],
     React: [{ text: "学习笔记", link: "react/react-note" }],
