@@ -9,14 +9,14 @@ description: "Git 笔记"
 
 不带选项的时候，`git remote` 命令列出所有远程主机。
 
-```bash
+```powershell
 git remote
 # origin
 ```
 
 使用 `-v` 选项，可以参看远程主机的网址。
 
-```bash
+```powershell
 git remote -v
 # origin  git@github.com:jquery/jquery.git (fetch)
 # origin  git@github.com:jquery/jquery.git (push)
@@ -26,7 +26,7 @@ git remote -v
 
 克隆版本库的时候，所使用的远程主机自动被 Git 命名为 `origin` 。如果想用其他的主机名，需要用 `git clone` 命令的 `-o` 选项指定。
 
-```bash
+```powershell
 git clone -o jQuery https://github.com/jquery/jquery.git
 git remote
 # jQuery
@@ -166,6 +166,18 @@ git branch --set-upstream master origin/next
 
 上面命令指定 `master` 分支追踪 `origin/next` 分支。
 
+上面的命令可能过时了，如果报错 `fatal: the '--set-upstream' option is no longer supported. Please use '--track' or '--set-upstream-to' instead.` 可以使用**新的命令**：
+
+```shell
+git branch master --set-upstream-to=origin/master
+```
+
+如果是关联当前分支，可以忽略本地分支名称：
+
+```shell
+git branch --set-upstream-to=origin/master
+```
+
 如果当前分支与远程分支存在追踪关系，`git pull` 就可以省略远程分支名。
 
 ```bash
@@ -222,6 +234,8 @@ git push origin master
 如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。
 
 ```bash
+git push origin HEAD:master
+# or 
 git push origin :master
 # 等同于
 git push origin --delete master
@@ -281,6 +295,13 @@ git push --force origin
 git push origin --tags
 ```
 
+#### 合并冲突撤销
+
+`git merge --abort` 安全的撤销合并操作。
+
+当解决完冲突，并且在合并完成后发现一个错误，还是有机会简单地撤销它。
+
+`git reset --hard` 可以回滚到那个合并开始前的状态。
 
 #### 撤销提交
 
@@ -350,3 +371,91 @@ git reset --hard [当前分支此前的最后一次提交]
 # 切换到 feature 分支
 git checkout feature
 ```
+
+### refusing to merge unrelated histories 问题解决
+
+#### 一、合并分支时允许合并不相关的历史
+
+在合并分支提示 `refusing to merge unrelated histories`，是由于两个分支拥有不相关的提交历史，所以合并被拒绝。
+
+如果确实需要合并，则可以在执行 `merge` 命令时指定一个 `--allow-unrelated-histories` 参数，会允许合并不相关的历史。
+
+例如，合并 `feature` 分支到 `master` 分支：
+
+```bash
+git merge feature --allow-unrelated-histories
+```
+
+即可成功合并，确认没有问题之后提交分支。
+
+#### 二、使用 git reset --hard 命令将 feature 分支覆盖到 master 分支
+
+使用方法一会保留之前 master 分支上提交的记录，而且 feature 分支的记录会变成一条总的记录到 master 分支上，这个不是我们想要的效果，我们比较希望丢弃 master 原来的提交记录，而将 feature 的所有记录都覆盖到 master 上。
+
+特别注意
+特别注意
+特别注意
+
+本操作是将 feature 分支的提交记录覆盖到 master 分支上，所以 master 分支上之前的提交记录将全部丢失，我不清楚是否可以恢复，所以请谨慎操作，确定被覆盖的分支不需要之后再进行操作！！
+
+操作步骤：
+
+1. 先切换到 mster 分支
+
+   ```bash
+   git checkout master
+   ```
+
+2. 使用 reset 命令重设 hard
+
+   ```bash
+   git reset --hard  origin/feature
+   ```
+
+3. 执行完以上的命令，master 分支就被远程的 feature 分支所覆盖，如果没有问题就可以提交了，提交时需要使用命令强制推送
+
+   ```
+   git push -f
+   ```
+
+
+
+
+### 删除远程分支文件
+
+#### 仅仅删除远程分支文件，不删除本地文件
+
+##### 删除远程 文件 filename
+
+```powershell
+git rm --cached filename
+git commit -m "delete remote file filename"
+git push -u origin <branchName>
+```
+
+##### 删除远程文件夹 directoryName
+
+```powershell
+git rm -r --cached directoryname
+git commit -m "delete remote directory directoryName"
+git push -u origin <branchName>
+```
+
+#### 删除本地文件与远程分支文件
+
+##### 删除文件 filename
+
+```
+git rm filename
+git commit -m "delete file filename"
+git push -u origin <branchName>
+```
+
+##### 删除文件夹 directoryName
+
+```
+git rm -r directoryname
+git commit -m "delete directory directoryName"
+git push -u origin <branchName>
+```
+
