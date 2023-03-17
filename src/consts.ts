@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-17 11:16:51
+ * @LastEditTime: 2023-03-17 19:33:21
  * @FilePath: \w3way\src\consts.ts
  * @Description: 常量
  */
@@ -39,6 +39,7 @@ export type Sidebar = Record<
 export const SIDEBAR: Sidebar = {
   en: {
     '常用': [
+      { text: "Astro", link: "common/astro" },
       { text: "Git", link: "common/git" },
       { text: "Node", link: "common/node" },
       { text: "SEO", link: "common/seo" },
