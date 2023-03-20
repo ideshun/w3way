@@ -211,6 +211,13 @@ git fetch --prune origin
 git fetch -p
 ```
 
+#### 取消追踪远程分支
+
+使用 `git branch --unset-upstream <branchname>` 命令可以取消本地分支与上游分支的关联。
+
+使用 `git branch -d -r origin/<remote branch name>` 命令可以删除本地的远程跟踪分支，即删除本地设置为跟踪远程分支的分支。这个命令不会删除远程仓库中的分支。
+使用 `git config --unset branch <branch> remote` 和 `git config --unset branch <branch> merge` 命令，这两个命令可以移除本地分支的配置信息，使其不再与远程分支相关联。
+
 
 
 ### git push
