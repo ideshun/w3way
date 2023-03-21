@@ -337,6 +337,8 @@ git revert [倒数第一个提交] [倒数第二个提交]
 git commit --amend -m "Fixes bug #42"
 ```
 
+
+
 #### 撤销工作区的文件修改
 
 如果工作区的某个文件被改乱了，但还没有提交，可以用 `git checkout` 命令找回本次修改之前的文件。
@@ -379,51 +381,33 @@ git reset --hard [当前分支此前的最后一次提交]
 git checkout feature
 ```
 
-### refusing to merge unrelated histories 问题解决
 
-#### 一、合并分支时允许合并不相关的历史
 
-在合并分支提示 `refusing to merge unrelated histories`，是由于两个分支拥有不相关的提交历史，所以合并被拒绝。
+### git clean
 
-如果确实需要合并，则可以在执行 `merge` 命令时指定一个 `--allow-unrelated-histories` 参数，会允许合并不相关的历史。
+`git clean` 用于从工作树中删除**未跟踪（tracked）**的文件，即没有被 `git add` 过的文件。
 
-例如，合并 `feature` 分支到 `master` 分支：
+`git clean` 经常和 `git reset --hard` 一起结合使用， `reset` 只影响被 track 过的文件。结合使用这两个命令能让你的工作目录完全回到一个指定的 `commit` 的状态。
 
-```powershell
-git merge feature --allow-unrelated-histories
-```
+#### 查看将要删除的内容
 
-即可成功合并，确认没有问题之后提交分支。
+`git clean -n` 显示将要删除的文件和目录，不会真正删除文件，只是一个提醒。
 
-#### 二、使用 git reset --hard 命令将 feature 分支覆盖到 master 分支
+#### 删除文件
 
-使用方法一会保留之前 master 分支上提交的记录，而且 feature 分支的记录会变成一条总的记录到 master 分支上，这个不是我们想要的效果，我们比较希望丢弃 master 原来的提交记录，而将 feature 的所有记录都覆盖到 master 上。
+`git clean -f` 删除当前目录下的**文件**。不会删除 `.gitignore` 文件里面指定的文件夹和文件。
 
-特别注意
-特别注意
-特别注意
+#### 删除指定目录下的文件
 
-本操作是将 feature 分支的提交记录覆盖到 master 分支上，所以 master 分支上之前的提交记录将全部丢失，我不清楚是否可以恢复，所以请谨慎操作，确定被覆盖的分支不需要之后再进行操作！！
+`git clean -f <path>` 删除**指定路径下的文件**。
 
-操作步骤：
+#### 删除文件和文件夹
 
-1. 先切换到 mster 分支
+`git clean -df` 删除当前目录下的**文件和文件夹**。
 
-   ```powershell
-   git checkout master
-   ```
+#### 删除所有文件
 
-2. 使用 reset 命令重设 hard
-
-   ```powershell
-   git reset --hard  origin/feature
-   ```
-
-3. 执行完以上的命令，master 分支就被远程的 feature 分支所覆盖，如果没有问题就可以提交了，提交时需要使用命令强制推送
-
-   ```powershell
-   git push -f
-   ```
+`git clean -xf` 删除当前目录下所有文件，包括 `.gitignore` 文件中指定忽略的文件夹和文件。
 
 
 
@@ -465,4 +449,54 @@ git rm -r directoryname
 git commit -m "delete directory directoryName"
 git push -u origin <branchName>
 ```
+
+
+
+### 常见问题
+
+#### refusing to merge unrelated histories 问题解决
+
+##### 一、合并分支时允许合并不相关的历史
+
+在合并分支提示 `refusing to merge unrelated histories`，是由于两个分支拥有不相关的提交历史，所以合并被拒绝。
+
+如果确实需要合并，则可以在执行 `merge` 命令时指定一个 `--allow-unrelated-histories` 参数，会允许合并不相关的历史。
+
+例如，合并 `feature` 分支到 `master` 分支：
+
+```powershell
+git merge feature --allow-unrelated-histories
+```
+
+即可成功合并，确认没有问题之后提交分支。
+
+##### 二、使用 git reset --hard 命令将 feature 分支覆盖到 master 分支
+
+使用方法一会保留之前 master 分支上提交的记录，而且 feature 分支的记录会变成一条总的记录到 master 分支上，这个不是我们想要的效果，我们比较希望丢弃 master 原来的提交记录，而将 feature 的所有记录都覆盖到 master 上。
+
+特别注意
+特别注意
+特别注意
+
+本操作是将 feature 分支的提交记录覆盖到 master 分支上，所以 master 分支上之前的提交记录将全部丢失，我不清楚是否可以恢复，所以请谨慎操作，确定被覆盖的分支不需要之后再进行操作！！
+
+操作步骤：
+
+1. 先切换到 mster 分支
+
+   ```powershell
+   git checkout master
+   ```
+
+2. 使用 reset 命令重设 hard
+
+   ```powershell
+   git reset --hard  origin/feature
+   ```
+
+3. 执行完以上的命令，master 分支就被远程的 feature 分支所覆盖，如果没有问题就可以提交了，提交时需要使用命令强制推送
+
+   ```powershell
+   git push -f
+   ```
 
