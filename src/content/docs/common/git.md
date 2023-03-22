@@ -500,3 +500,47 @@ git merge feature --allow-unrelated-histories
    git push -f
    ```
 
+#### LF和CRLF换行符不一致问题
+
+Windows 系统使用 CRLF（回车换行）作为换行符，而 Linux 和 MacOS 系统使用 LF（换行）作为换行符。这种差异会导致 `git diff` 中显示整个文件都被修改了，或者合并分支时出现冲突等。
+
+Git 有一个全局配置项叫做 `core.autocrlf`，可以控制 Git 在提交和检出时是否对换行符进行转换。有三个可选值：
+
+- `true`：表示在提交时将 CRLF 转换为 LF，在检出时将 LF 转换为 CRLF 。这个选项适合 Windows 用户使用。
+- `input`：表示在提交时将 CRLF 转换为 LF，在检出时不进行转换。这个选项适合 Linux 和 MacOS 用户使用。
+- `false`：表示不进行任何转换。这个选项适合想保持原始换行符不变的用户使用。
+
+*为了保持代码统一，我还是习惯使用 `LF` 作为 `core.autocrlf` 的默认配置。*
+
+可以使用 `git config` 命令来查看或修改 `core.autocrlf` 属性，例如：
+
+```
+git config --global core.autocrlf [input | true | false]
+```
+
+也可以像上面一样，在 `.gitconfig` 文件中直接编辑 `core.autocrlf` 属性，例如：
+
+```
+[core]
+	autocrlf = input
+```
+
+除了 `core.autocrlf` 之外，还有一个配置项叫做 `core.eol`（end of line），它可以指定仓库中文件使用哪种换行符。它有三个可选值：
+
+- `lf`：表示仓库中文件使用 LF 作为换行符。
+- `crlf`：表示仓库中文件使用 CRLF 作为换行符。
+- `native`：表示仓库中文件使用当前操作系统默认的换行符。
+
+你可以使用 `git config` 命令来查看或修改 `core.eol` 属性，例如：
+
+```powershell
+git config --global core.eol [lf | crlf | native]
+```
+
+也可以像上面一样，在 `.gitconfig` 文件中直接编辑 `core.eol` 属性，例如：
+
+```
+[core]
+	eol = lf
+```
+
