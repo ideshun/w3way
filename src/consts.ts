@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-21 21:02:16
+ * @LastEditTime: 2023-03-23 21:50:18
  * @FilePath: \w3way\src\consts.ts
  * @Description: 常量
  */
@@ -43,6 +43,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Git", link: "common/git" },
       { text: "Moment.js", link: "common/momentjs" },
       { text: "Node", link: "common/node" },
+      { text: "pnpm", link: "common/pnpm" },
       { text: "SEO", link: "common/seo" },
       { text: "TypeScript", link: "common/typescript" },
       { text: "VS Code", link: "common/vscode" },
