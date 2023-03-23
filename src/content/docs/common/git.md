@@ -390,6 +390,12 @@ git checkout feature
 
 
 
+### git reset
+
+
+
+
+
 ### git clean
 
 `git clean` 用于从工作树中删除**未跟踪（tracked）**的文件，即没有被 `git add` 过的文件。
