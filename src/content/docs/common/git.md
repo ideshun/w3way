@@ -213,9 +213,16 @@ git fetch -p
 
 #### 取消追踪远程分支
 
+##### 取消本地分支与上游分支的关联
+
 使用 `git branch --unset-upstream <branchname>` 命令可以取消本地分支与上游分支的关联。
 
+##### 删除本地的远程跟踪分支
+
 使用 `git branch -d -r origin/<remote branch name>` 命令可以删除本地的远程跟踪分支，即删除本地设置为跟踪远程分支的分支。这个命令不会删除远程仓库中的分支。
+
+##### 移除本地分支的配置信息
+
 使用 `git config --unset branch <branch> remote` 和 `git config --unset branch <branch> merge` 命令，这两个命令可以移除本地分支的配置信息，使其不再与远程分支相关联。
 
 
@@ -408,6 +415,24 @@ git checkout feature
 #### 删除所有文件
 
 `git clean -xf` 删除当前目录下所有文件，包括 `.gitignore` 文件中指定忽略的文件夹和文件。
+
+
+
+### git branch
+
+#### 修改本地分支名
+
+可以使用 `git branch -m new-name` 命令来修改当前分支名，或者使用 `git branch -m old-name new-name` 命令来修改另一个分支的名称。
+
+#### 修改远程分支名
+
+可以先删除远程分支，然后推送修改后的本地分支。
+
+例如，使用 `git push origin --delete old-name` 命令来删除远程分支，然后使用 `git push origin -u new-name` 命令来推送新的分支。
+
+#### 更新本地克隆
+
+如果修改了远程分支名，需要在本地克隆中更新分支的信息。你可以使用上面 `git pull` 的一系列命令来完成这个操作。
 
 
 
