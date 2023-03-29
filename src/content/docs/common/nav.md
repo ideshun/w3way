@@ -9,6 +9,12 @@ description: "网站导航"
 
 
 
+### 组件库
+
+[React Color](https://casesandberg.github.io/react-color/#api-individual)：一个 React 颜色选择器组件
+
+
+
 ## AI
 
 [Bard](https://bard.google.com/)（Google Bard）| [ChatGPT](https://chat.openai.com/chat) | [New Bing](https://www.bing.com/search?q=Bing+AI&showconv=1&showconv=1)
@@ -19,7 +25,7 @@ description: "网站导航"
 
 ## API
 
-[API RANK](https://apirank.dev/) | 
+[API RANK](https://apirank.dev/) | [mermaid](https://mermaid.js.org/intro/)(MarkDown工作流/流程图) | 
 
 
 
@@ -48,3 +54,11 @@ description: "网站导航"
 [dumi (为组件开发场景而生的文档工具)](https://d.umijs.org) | [Make A Pei (ECharts实例)](https://www.makeapie.com) | [babel (JS编译)](https://babel.dev) | [Sioe (RGB转换)](https://www.sioe.cn/yingyong/yanse-rgb-16/) | [uCharts (跨全端图表)](http://ucharts.cn) | [Draw.io (画图)](https://draw.io)
 
  [momentjs](http://momentjs.cn/docs/#/displaying/format/) |
+
+
+
+## Docs & API
+
+### Next.js
+
+[Custom Server 自定义服务器](https://nextjs.org/docs/advanced-features/custom-server)：Next.js 开发环境代理配置

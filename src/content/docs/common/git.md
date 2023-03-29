@@ -3,6 +3,90 @@ title: "Git 笔记"
 description: "Git 笔记"
 ---
 
+
+
+
+```mermaid
+graph TB
+
+add[工作区] -- git add --> commit[暂存区] -- git commit --> 本地库
+```
+
+
+```mermaid
+graph LR
+A[长方形] -- 链接 --> B((圆))
+A --> C(圆角长方形)
+B --> D{菱形}
+C --> D
+```
+
+
+
+```flow
+add=>start: 工作区
+  commit=>operation: 暂存区
+  end=>end: 本地库
+add(git add)->commit
+add->commit->end
+```
+
+
+
+
+
+  ```flow
+
+
+
+
+
+
+st=>start: Start
+  op=>operation: Your Operation
+  cond=>condition: Yes or No?
+  e=>end
+  st->op->cond
+  cond(yes)->e
+  cond(no)->op
+  ```
+
+
+
+### Git 配置
+
+#### 设置用户名
+
+```powershell
+git config --global user.name [Deshun]
+```
+
+#### 设置邮箱
+
+```powershell
+git config --global user.email [deshun@w3h5.com]
+```
+
+#### 查看配置文件：Git Bash Here
+
+```powershell
+cat .gitconfig // 需要在用户目录执行
+```
+
+#### 初始化本地库
+
+```powershell
+git init
+```
+
+#### 查看本地库状态
+
+```
+git status
+```
+
+
+
 ### git remote
 
 为了便于管理，Git 要求每个远程主机都必须指定一个主机名。`git remote` 命令就用于管理主机名。
@@ -40,7 +124,7 @@ git remote
 git remote show <主机名>
 ```
 
-#### 添加远程主机
+#### 添加远程主机 add
 
 `git remote add` 命令用于添加远程主机。
 
@@ -48,7 +132,7 @@ git remote show <主机名>
 git remote add <主机名> <网址>
 ```
 
-#### 删除远程主机
+#### 删除远程主机 rm
 
 `git remote rm` 命令用于删除远程主机。
 
@@ -56,7 +140,7 @@ git remote add <主机名> <网址>
 git remote rm <主机名>
 ```
 
-#### 远程主机改名
+#### 远程主机改名 rename 
 
 `git remote rename` 命令用于远程主机的改名。
 
@@ -68,6 +152,8 @@ git remote rename <原主机名> <新主机名>
 
 ### git fetch
 
+#### 将更新取回本地 
+
 一旦远程主机的版本库有了更新（Git术语叫做 commit ），需要将这些更新取回本地，这时就要用到 `git fetch` 命令。
 
 ```powershell
@@ -77,6 +163,8 @@ git fetch <远程主机名>
 上面命令将某个远程主机的更新，全部取回本地。
 
 `git fetch` 命令通常用来查看其他人的进程，因为它取回的代码对你本地的开发代码没有影响。
+
+#### 取回指定分支
 
 默认情况下，`git fetch` 取回所有分支（branch）的更新。如果只想取回特定分支的更新，可以指定分支名。
 

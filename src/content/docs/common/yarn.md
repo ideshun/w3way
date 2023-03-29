@@ -66,6 +66,8 @@ yarn.lock 是自动生成的，不应该去手动修改。
 
 `yarn upgrade <packageName>` 更新依赖：按照 [node#npm版本号的 ^ 和 ~](/common/node#npm版本号的--和) 规则，更新依赖。
 
+> 注意：package.json 中依赖版本使用了 `^` 时，如果 `yarn.lock` **和** `node_modules` 文件夹中已经有这个依赖， `yarn` / `yarn install` 不会自动更新依赖版本，不会修改 `yarn.lock` 文件。如果 `node_modules` 目录**或者** `yarn.lock` 文件中没有相应的依赖，才会按照 package.json 中的版本规则重新下载依赖。
+
 #### yarn upgrade
 
 根据 package.json文件中指定的版本范围将包升级到其最新版本，同时会更新 yarn.lock 文件。
