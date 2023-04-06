@@ -3,55 +3,15 @@ title: "Git 笔记"
 description: "Git 笔记"
 ---
 
+### Git 基本概念
 
+工作区
 
+暂存区
 
-```mermaid
-graph TB
+本地仓库
 
-add[工作区] -- git add --> commit[暂存区] -- git commit --> 本地库
-```
-
-
-```mermaid
-graph LR
-A[长方形] -- 链接 --> B((圆))
-A --> C(圆角长方形)
-B --> D{菱形}
-C --> D
-```
-
-
-
-```flow
-add=>start: 工作区
-  commit=>operation: 暂存区
-  end=>end: 本地库
-add(git add)->commit
-add->commit->end
-```
-
-
-
-
-
-  ```flow
-
-
-
-
-
-
-st=>start: Start
-  op=>operation: Your Operation
-  cond=>condition: Yes or No?
-  e=>end
-  st->op->cond
-  cond(yes)->e
-  cond(no)->op
-  ```
-
-
+远程仓库
 
 ### Git 配置
 
@@ -85,7 +45,36 @@ git init
 git status
 ```
 
+### Git 基础命令
 
+
+
+#### 撤销 add 暂存 
+
+使用 ` git restore --staged` 命令，指定想要撤销的文件名。例如：
+
+```
+git restore --staged myfile.txt
+```
+
+使用 `git reset` 命令，指定想要撤销的文件名。例如：
+
+```
+git reset myfile.txt
+```
+
+如果要撤销所有已经添加的文件：
+
+`git reset` 命令可以不指定文件名，执行后会列出所以被撤销暂存的文件。
+
+`git restore --staged` 使用 `*` 或者 `.` 代表全部。如下：
+
+```
+git reset
+git restore --staged *
+```
+
+这些命令只会从暂存区移除文件，不会影响文件的内容。
 
 ### git remote
 

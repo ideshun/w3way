@@ -17,9 +17,11 @@ description: "网站导航"
 
 ## AI
 
-[Bard](https://bard.google.com/)（Google Bard）| [ChatGPT](https://chat.openai.com/chat) | [New Bing](https://www.bing.com/search?q=Bing+AI&showconv=1&showconv=1)
+[Bard](https://bard.google.com/)（Google Bard）| [ChatGPT](https://chat.openai.com/chat) | [New Bing](https://www.bing.com/search?q=Bing+AI&showconv=1&showconv=1) | 
 
 [ERNIE-ViLG](https://wenxin.baidu.com/ernie-vilg)（百度 AI 作画大模型）| [文心一格](https://yige.baidu.com/creation)（百度AI作画）| [文心一言](https://yiyan.baidu.com/)（百度AI聊天）
+
+[GitHub Copilot](https://github.com/features/copilot)：由OpenAI Codex AI系统提供支持，系统基于GPT-3模型，能根据简单提示生成代码序列。支持多种语言和框架，可以帮助开发者编写更优质高效的代码。
 
 
 

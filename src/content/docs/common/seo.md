@@ -35,21 +35,21 @@ og 是一种新的HTTP头部标记（Open Graph协议）这种协议可以让网
 3. 能够正确的分享您的内容到SNS网站；
 4. 帮助您的内容更有效的在SNS网络中传播；
 
-#### Meta Property=og主要标签属性
+#### Meta Property=og 主要标签属性
 
-`og:title` 标题
+`og:title` 网页标题
 
-`og:type` 类型（常用值：rticle book movie）
+`og:type` 网页类型（常用值：`article` 、`book` 、`movie` 、`video` 、`website`）
 
-`og:image` 略缩图地址
+`og:image` 网页的主要图片
 
 `og:author` 作者名称
 
-`og:url` 页面地址
+`og:url` 网页的地址
 
 `og:release_date` 发布时间
 
-`og:description` 页面的简单描述
+`og:description` 网页的简介
 
 `og:site_name` 页面所在网站名
 
@@ -57,10 +57,30 @@ og 是一种新的HTTP头部标记（Open Graph协议）这种协议可以让网
 
 `og:audiosrc` 音频地址
 
-不支持 keywords ，可以和 name 搭配使用：
+`og:site_name` 网站名称
+
+`og:locale` 网页语言
+
+不支持 `keywords`。
+
+可以和 `name` 搭配使用：
 
 ```html
 <meta name="description" property="og:description" content={SITE.description} />
 <meta name="keywords" content={SITE.keywords} />
 ```
+
+#### 简单示例：
+
+```html
+<meta property="og:title" content="property=og标签的含义及作用-w3h5前端资源网"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content="https://w3h5.com/og-image.jpg"/>
+<meta property="og:url" content="https://w3h5.com/og-article.html"/>
+<meta property="og:description" content="本文介绍了property=og标签的概念、用法和优势，以及如何在WordPress中添加该标签。"/>
+<meta property="og:site_name" content="w3h5前端资源网"/>
+<meta property="og:locale" content="zh_CN"/>
+```
+
+
 
