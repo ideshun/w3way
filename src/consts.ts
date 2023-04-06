@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-03-29 21:47:30
+ * @LastEditTime: 2023-04-06 10:28:07
  * @FilePath: \w3way\src\consts.ts
  * @Description: 常量
  */
@@ -52,6 +52,7 @@ export const SIDEBAR: Sidebar = {
       { text: "pnpm", link: "common/pnpm" },
       { text: "SEO", link: "common/seo" },
       { text: "Webpack", link: "common/webpack" },
+      { text: "Windows WSL2 安装 Ubuntu 进行开发", link: "common/windows-wsl2-install-ubuntu" },
       { text: "VS Code", link: "common/vscode" },
       { text: "Yarn", link: "common/yarn" },
     ],
