@@ -53,6 +53,10 @@ description: "网站导航"
 
 ## 工具
 
+[geekuninstaller (软件卸载工具)](https://crystalidea.com/uninstall-tool) | [SoftCnKiller (流氓软件清理)](https://free.lanzoux.com/b0cpu1guf)
+
+[volta (node版本管理)](https://volta.sh/)
+
 [dumi (为组件开发场景而生的文档工具)](https://d.umijs.org) | [Make A Pei (ECharts实例)](https://www.makeapie.com) | [babel (JS编译)](https://babel.dev) | [Sioe (RGB转换)](https://www.sioe.cn/yingyong/yanse-rgb-16/) | [uCharts (跨全端图表)](http://ucharts.cn) | [Draw.io (画图)](https://draw.io)
 
  [momentjs](http://momentjs.cn/docs/#/displaying/format/) |
