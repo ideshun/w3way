@@ -125,3 +125,53 @@ jobs:
 
 每次提交代码更改，GitHub Actions 会自动部署发布。
 
+### 常见问题
+
+#### Astro 如何打印变量
+
+1. 在头部直接写 JS 语句：
+
+  ```javascript
+  <--! src/pages/index.astro -->
+  ---
+  // 打印变量console
+  console.log(console);
+  ---
+  <html>
+  <head>
+    <title>Astro Console</title>
+  </head>
+  <body>
+    <h1>Welcome to Astro Console</h1>
+  </body>
+  </html>
+  ```
+
+  这样，在运行npm run dev或npm run build时，就会在终端中看到 console 的值。
+
+2. 使用 define:vars 指令
+   `define:vars` 是一个 astro 提供的模板指令，可以通过它在 `.astro` 文件中定义一些变量，并将传递给客户端的 `<script>` 标签。可以使用`define:vars` 指令来定义一个变量 `console` ，并将它赋值为原始的 `console` 对象。然后在 `<script>` 标签中使用这个变量并打印它。
+   
+   例如，你可以在 `src/pages/index.astro` 文件中使用 `define:vars` 指令来定义并打印变量 `console`：
+
+   ```javascript
+   <--! src/pages/index.astro -->
+   ---
+   // 定义一个变量console，并赋值为原始的console对象
+   define:vars={{ console }};
+   ---
+   <html>
+   <head>
+     <title>Astro Console</title>
+   </head>
+   <body>
+     <h1>Welcome to Astro Console</h1>
+     <!-- 在<script>标签中打印变量console -->
+     <script>
+       console.log(console);
+     </script>
+   </body>
+   </html>
+   ```
+    这样，启动项目，访问 `http://localhost:3000` ，就可以在浏览器的控制台中看到 `console` 的值。
+  

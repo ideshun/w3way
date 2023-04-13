@@ -23,6 +23,8 @@ description: "网站导航"
 
 [GitHub Copilot](https://github.com/features/copilot)：由OpenAI Codex AI系统提供支持，系统基于GPT-3模型，能根据简单提示生成代码序列。支持多种语言和框架，可以帮助开发者编写更优质高效的代码。
 
+[OFA-Sys](https://huggingface.co/OFA-Sys)：一个多模态多任务人工智能系统。
+
 
 
 ## API
@@ -52,6 +54,8 @@ description: "网站导航"
 
 
 ## 工具
+
+[oh my posh (PowerShell扩展)](https://ohmyposh.dev/)
 
 [geekuninstaller (软件卸载工具)](https://crystalidea.com/uninstall-tool) | [SoftCnKiller (流氓软件清理)](https://free.lanzoux.com/b0cpu1guf)
 
