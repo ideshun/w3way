@@ -2,7 +2,7 @@
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
  * @LastEditors: Deshun
- * @LastEditTime: 2023-04-06 10:28:07
+ * @LastEditTime: 2023-04-13 15:52:18
  * @FilePath: \w3way\src\consts.ts
  * @Description: 常量
  */
@@ -42,6 +42,7 @@ export const SIDEBAR: Sidebar = {
     操作系统: [
       { text: "日常笔记", link: "system/system" },
       { text: "Linux", link: "system/linux" },
+      { text: "Windows", link: "system/windows" },
     ],
     常用: [
       { text: "Astro", link: "common/astro" },
