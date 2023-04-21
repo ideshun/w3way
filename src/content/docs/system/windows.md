@@ -43,7 +43,7 @@ Oh My Posh 中使用了很多图标字体，需要正常显示图标，需要安
 oh-my-posh font install
 ```
 
-我这里选择的是 FiraCode，也可以去 [FiraCode GitHub](https://github.com/ryanoasis/nerd-fonts) 下载安装，解压后右键安装。
+我这里选择的是 FiraCode，官方推荐 Meslo LGM NF，也可以去 [nerd-fonts GitHub](https://github.com/ryanoasis/nerd-fonts) 下载安装，解压后右键安装。
 
 注意：这里的字体名称可能不是 FiraCode，配置字体的时候可能会报错（我这里就是 FiraCode NF）。可以在 `C:\Windows\Fonts` 查看具体的字体名。
 

@@ -47,9 +47,28 @@ git status
 
 ### Git 基础命令
 
+### git add
 
+添加已被忽略的文件：
 
-#### 撤销 add 暂存 
+```
+git add -f
+# or
+git add --force
+```
+
+添加更新的文件：
+
+```
+git add -u
+git add --update
+```
+
+ 把 <path> 中所有 tracked 文件中被修改过或已删除文件的信息添加到索引库。它不会处理 untracted 的文件。
+
+如果在使用 `-u` 选项时没有 <指定路径>，则整个工作树中的所有跟踪文件都将更新（旧版本 Git 会限制更新当前目录及其子目录）。
+
+#### 撤销 add 暂存
 
 使用 ` git restore --staged` 命令，指定想要撤销的文件名。例如：
 
@@ -75,6 +94,21 @@ git restore --staged *
 ```
 
 这些命令只会从暂存区移除文件，不会影响文件的内容。
+
+#### git add . 排除某个文件
+
+1.  `git add -A` 或 `git add .` 来添加所有文件，然后使用 `git reset – <file_path>` 来取消添加某个文件。例如：
+
+   ```
+   git add .
+   git reset –- main/dontcheckmein.txt
+   ```
+
+2. 另一种方法是使用 `git add` 的路径规范选项，可以使用 `:(exclude)` 或 `:!` 来指定要排除的文件或目录。例如：
+
+   ```
+   git add . :!path/to/file1 :!path/to/file2 :!path/to/folder1/*
+   ```
 
 ### git remote
 
@@ -660,3 +694,10 @@ git config --global core.eol [lf | crlf | native]
 - 然后，你可以使用 `git reset --hard` 目标版本id命令来回退到目标版本，这会重置你的本地仓库、暂存区和工作区，使它们与目标版本一致。注意，这会丢弃目标版本之后的所有提交。
 - 或者，你可以使用 `git revert -n` 目标版本 id 命令来反做目标版本，这会生成一个新的提交，撤销目标版本的修改，但保留目标版本之后的提交。注意，这可能会导致冲突，需要手动解决。
 - 最后，你可以使用 `git push -f` 命令来强制推送你的本地修改到远程仓库，覆盖远程仓库的历史。
+
+#### 设置大小写敏感
+
+```
+git config --global core.ignorecase false
+```
+
