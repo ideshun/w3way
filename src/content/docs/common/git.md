@@ -47,6 +47,34 @@ git status
 
 ### Git 基础命令
 
+### git merge
+
+#### 退出合并
+
+如果还没有提交合并的结果，可以使用以下命令来放弃合并，回到合并之前的状态：
+
+```
+git merge --abort
+```
+
+如果在解决合并冲突后已经进行了提交（commit），你可以使用以下命令来回退到合并之前的状态：
+
+```
+git reset --hard ORIG_HEAD
+```
+
+#### 合并代码
+
+合并代码，如果有冲突，全部使用被合并分支的代码：
+
+```
+git merge -X theirs hotfix 
+```
+
+其中，`-X` theirs 选项告诉 Git 在出现冲突时选择使用 hotfix 分支的代码。这样，Git 会自动解决冲突并选择使用 hotfix 分支的更改。
+
+`--allow-unrelated-histories` 允许合并无关的历史
+
 ### git add
 
 添加已被忽略的文件：
@@ -67,6 +95,45 @@ git add --update
  把 <path> 中所有 tracked 文件中被修改过或已删除文件的信息添加到索引库。它不会处理 untracted 的文件。
 
 如果在使用 `-u` 选项时没有 <指定路径>，则整个工作树中的所有跟踪文件都将更新（旧版本 Git 会限制更新当前目录及其子目录）。
+
+### git cherry-pick
+
+#### 基本使用
+
+git cherry-pick 的使用场景就是将一个分支中的部分的提交合并到其他分支
+
+```
+git checkout master 
+git cherry-pick <commitHash> 
+```
+
+使用以上命令以后，这个提交将会处在master的最前面
+
+#### 合并多个提交
+
+```
+git cherry-pick <hashA> <hashB>     // 合并两个提交
+git cherry-pick <hashA>..<hashB>    // 合并从A到B两个提交中到所有提交，但不包含A
+git cherry-pick <hashA>^..<hashB>   // 合并从A到B两个提交中到所有提交，包含A
+```
+
+#### pick以后产生了冲突
+
+当执行了cherry-pick 命令如果有冲突，就会报冲突错误
+
+```
+git cherry-pick --continue  // 1. 解决完冲突以后，继续下一个 cherry-pick
+git cherry-pick --abort   // 2. 如果不想解决冲突，要放弃合并，用此命令回到操作以前
+git cherry-pick --quit   // 3. 不想解决冲突，放弃合并，且保持现有情况，不回到操作以前
+```
+
+#### 转移到另一个代码库
+
+```
+git remote add target git://gitUrl //添加一个远程仓库target
+git fetch target                   //远程代码抓取到本地
+git log target/master              //获取该提交的哈希值
+```
 
 #### 撤销 add 暂存
 
@@ -109,6 +176,30 @@ git restore --staged *
    ```
    git add . :!path/to/file1 :!path/to/file2 :!path/to/folder1/*
    ```
+
+### git stash
+
+#### git stash
+
+将未提交的更改保存在一个临时存储区
+
+#### git stash list
+
+查看所有存储的 `stash` 列表
+
+#### git stash apply
+
+`git stash apply stash@{N} ` 命令将指定的 `stash` 应用到工作区，其中 `N` 是 `stash` 在列表中的索引号。
+
+例如，如果要回到前一个 `stash`，可以使用命令 `git stash apply stash@{1}`。
+
+#### git stash pop
+
+将最近一次存储的更改应用到工作区，同时会删除这条 `stash` 记录。
+
+#### git stash drop
+
+如果要撤销一个 `stash`，可以使用 `git stash drop stash@{N}` 命令来删除指定的 `stash`，其中 `N` 是 `stash` 在列表中的索引号。如果要删除最近的 `stash`，可以使用命令 `git stash drop`。注意，删除一个 `stash` 不会自动将其应用到工作区中，必须使用 `git stash apply` 或 `git stash pop` 命令显式地应用一个 `stash`。
 
 ### git remote
 
