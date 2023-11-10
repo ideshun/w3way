@@ -21,7 +21,19 @@ cat nginx.conf
 tail -n l hello.text
 ```
 
+显示当前系统上的文件系统的磁盘使用情况统计
 
+```
+df -lh
+```
+
+其中，`df` 是 disk free 的缩写，表示显示磁盘空闲空间；`-l` 是 local 的缩写，表示只显示本地文件系统；`-h` 是 human-readable 的缩写，表示以人类可读的格式（如 KB, MB, GB 等）显示大小。
+
+查找大小排行前五的文件
+
+```
+du -ahx . | sort -rh | head -5
+```
 
 
 
