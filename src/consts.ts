@@ -1,9 +1,8 @@
 /*
  * @Author: Deshun
  * @Date: 2023-03-06 17:03:29
- * @LastEditors: Deshun
- * @LastEditTime: 2023-04-13 15:52:18
- * @FilePath: \w3way\src\consts.ts
+ * @LastEditTime: 2023-11-21 12:04:36
+ * @FilePath: /w3way/src/consts.ts
  * @Description: 常量
  */
 export const SITE = {
@@ -67,3 +66,4 @@ export const SIDEBAR: Sidebar = {
     Rust: [{ text: "介绍", link: "rust/introduction" }],
   },
 };
+export const ALGOLIA = {};
