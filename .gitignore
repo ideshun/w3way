@@ -16,6 +16,8 @@ pnpm-debug.log*
 
 # lock files
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 
 # environment variables
@@ -25,3 +27,4 @@ package-lock.json
 # macOS-specific files
 .DS_Store
 .history
+.idea
