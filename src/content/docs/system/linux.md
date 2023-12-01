@@ -3,6 +3,13 @@ title: "Linux 笔记"
 description: "Linux 笔记"
 ---
 
+### 包管理器安装wget
+
+```bash
+sudo apt update
+sudo apt install wget
+···
+
 #### 查看文件
 
 ```powershell
@@ -36,7 +43,6 @@ du -ahx . | sort -rh | head -5
 ```
 
 
-
 #### vim
 
 `yy` 复制
@@ -45,8 +51,23 @@ du -ahx . | sort -rh | head -5
 
 `wq` 保存&退出，先按 esc 进入命令模式再输入
 
+`i` 进入编辑模式
 
+退出并保存，先按 ESC 再输入 `:wq`
 
+退出并不保存 `:q!`
+
+#### 复制文件
+
+```Bash
+cp -r /home/user/test/ /home/user/test2/
+```
+
+#### 移动/修改文件
+
+```Bash
+mv /home/user/test/ /home/user/test2/
+```
 
 
 ```
