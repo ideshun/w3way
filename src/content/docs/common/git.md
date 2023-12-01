@@ -33,6 +33,20 @@ git config --global user.email [deshun@w3h5.com]
 cat .gitconfig // 需要在用户目录执行
 ```
 
+#### 查看全局用户配置
+
+```powershell
+git config --global --get user.name
+git config --global --get user.email
+```
+
+#### 查看仓库特定的用户信息
+
+```powershell
+git config --get user.name
+git config --get user.email
+```
+
 #### 初始化本地库
 
 ```powershell
