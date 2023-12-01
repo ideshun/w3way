@@ -27,7 +27,7 @@ wsl -l -v
 #### 安装指定版本
 
 ```powershell
-wsl --install Ubuntu-22.04
+wsl --install -d Ubuntu-22.04
 ```
 
 等待安装成功，等待几分钟启动系统。
@@ -409,3 +409,30 @@ source /root/.zshrc
 
 3. 可以再输入 `wslconfig /l` 检查一下，确认注销成功。
    
+
+### 常见问题
+
+#### 占位程序接收到错误数据 0x800706f7
+
+安装完启动 WSL 子系统时，命令行报错：
+``` Bash
+占位程序接收到错误数据。
+Error code: Wsl/Service/0x800706f7
+```
+
+解决方案： 用管理权限打开 cmd 命令窗口，执行以下代码：
+
+``` Bash
+netsh winsock reset
+```
+
+然后重新进入 `wsl` 子系统即可，无需重启计算机。
+
+#### Error: git is not installed
+
+说明系统还没有安装 Git，在 Debian/Ubuntu 上安装 Git：
+
+```Bash
+sudo apt update
+sudo apt install git
+```
