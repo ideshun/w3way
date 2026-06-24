@@ -28,7 +28,7 @@ export const LINKS = [
   },
   {
     name: "德顺博客",
-    url: "https://www.dblog.cc",
+    url: "https://idblog.cn",
   },
 ];
 
